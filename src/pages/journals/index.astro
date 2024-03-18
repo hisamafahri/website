@@ -4,7 +4,7 @@ import Base from "../../components/Base.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 
 const journals = (await getCollection("journals")).sort(
-  (a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf(),
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
 ---
 
