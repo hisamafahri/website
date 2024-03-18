@@ -10,6 +10,15 @@
   a {
     @apply text-blue-500 hover:text-blue-400;
   }
+  h1 {
+    @apply font-mono text-xl font-medium text-gray-500;
+  }
+  h2 {
+    @apply font-mono text-gray-500;
+  }
+  h3 {
+    @apply font-mono text-gray-500;
+  }
 }
 
 @tailwind components;
