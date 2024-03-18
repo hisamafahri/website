@@ -1,0 +1,15 @@
+@tailwind base;
+
+@layer base {
+  html {
+    @apply font-sans leading-6 antialiased;
+  }
+  body {
+    @apply bg-[#111111] text-gray-50;
+  }
+  a {
+    @apply text-blue-500 hover:text-blue-400;
+  }
+}
+
+@tailwind components;
