@@ -5,27 +5,17 @@ import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = CollectionEntry<"journals">["data"];
 
-const { title, description, publishDate, updatedDate } = Astro.props;
+const { title, description, publishDate } = Astro.props;
 ---
 
 <Base title={title} description={description}>
-  <article class="mb-24 mt-16">
-    <div class="prose">
-      <div class="title">
-        <div class="date">
-          <FormattedDate date={publishDate} />
-          {
-            updatedDate && (
-              <div class="last-updated-on">
-                Last updated on <FormattedDate date={updatedDate} />
-              </div>
-            )
-          }
-        </div>
-        <h1>{title}</h1>
-        <hr />
-      </div>
-      <slot />
+  <article class="mb-24 mt-16 h-full">
+    <slot />
+    <div class="mt-8">
+      <p class="font-mono text-gray-500">
+        Published on:
+        <FormattedDate date={publishDate} />
+      </p>
     </div>
   </article>
 </Base>

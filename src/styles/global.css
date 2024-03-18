@@ -13,8 +13,40 @@
   h1,
   h2,
   h3 {
-    @apply mb-4 font-mono text-gray-500;
+    @apply my-4 font-mono text-gray-500;
   }
+  p {
+    @apply mt-2;
+  }
+  pre {
+    @apply my-4 rounded-lg !bg-[#24292F] px-6 py-6;
+  }
+  blockquote {
+    @apply my-6 ml-4 border-l border-gray-500 pl-6 italic opacity-80;
+  }
+  table {
+    @apply my-5 w-full;
+  }
+  th {
+    @apply border-b border-dashed border-gray-500 px-4 text-left font-mono text-sm text-gray-400;
+  }
+  td {
+    @apply px-2 py-1;
+  }
+  ul {
+    @apply my-4 ml-12;
+  }
+  li {
+    @apply my-2;
+  }
+  hr {
+    @apply my-12 border border-gray-600;
+  }
+}
+
+li::marker {
+  content: "— ";
+  font-size: 1.2em;
 }
 
 @tailwind components;
