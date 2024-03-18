@@ -1,9 +1,13 @@
-# Hisam's Personal Website v3
+## Hisam's Personal Website v3
 
-## Author
+![preview](https://i.imgur.com/39dmJjZ.png)
+
+Heavily inspired by [Morgan's site](https://essens.dev/).
+
+### Author
 
 [@hisamafahri](https://github.com/hisamafahri)
 
-## License
+### License
 
 [MIT](LICENSE)
