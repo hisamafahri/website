@@ -12,4 +12,16 @@ const journals = defineCollection({
   }),
 });
 
-export const collections = { journals };
+const pages = defineCollection({
+  type: "content",
+  // Type-check frontmatter using a schema
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    // Transform string to Date object
+    publishDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+  }),
+});
+
+export const collections = { journals, pages };
