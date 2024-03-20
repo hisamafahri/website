@@ -1,7 +1,7 @@
 ---
 title: "Now"
 description: "What I have been up to lately"
-publishDate: "19 Mar 2024"
+publishDate: "20 Mar 2024"
 ---
 
 ## now
@@ -12,7 +12,7 @@ I have been trying my best to have a lot of meaningful things to do every moment
 - Focusing on _Ramadhan_ fasting this month;
 - Working as a Software Engineer at Pitik;
 - Building [Thingpie](https://thingpie.com);
-- Reading a lot of books and articles. Currently reading [the Alchemist](https://www.goodreads.com/book/show/18144590-the-alchemist) and [Scaling Through Chaos](https://www.indexventures.com/scaling-through-chaos/);
+- Reading a lot of books and articles. Currently reading [the Alchemist](https://www.goodreads.com/book/show/18144590-the-alchemist);
 - Writing a ton. On my [journal](https://hisam.dev/journals), on my [digital](https://maggieappleton.com/garden-history) [Zettelkasten](https://zettelkasten.de/overview) with [logseq](https://logseq.com), and on [my pen and paper](https://hisam.dev/uses);
 - Learning Piano and learning to play golf (don't expect too much on both of them 😅);
 - Wanting to revisit [Vue.js](https://vuejs.org/) and learn [Ruby on Rails](https://rubyonrails.org/). Read [why]();
