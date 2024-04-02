@@ -1,7 +1,7 @@
 ---
 title: "Uses"
 description: "Things that I personally use"
-publishDate: "19 Mar 2024"
+publishDate: "02 Apr 2024"
 ---
 
 ## uses
@@ -25,6 +25,12 @@ A collection of things that I use day-to-day to do things and improve things.
 - [Notion Calendar](https://www.notion.so/product/calendar) (previously known as [Cron](https://cron.com/)) - prefered calendar client;
 - [Raycast](https://www.raycast.com/) — supercharged launcher;
 - [Fly.io](https://fly.io) or [GCP](https://cloud.google.com/) - cloud platform. Depends on the project;
+
+## other tools
+
+- [A6 Midori MD Paper Notebook](https://md.midori-japan.co.jp/en/products/mdnote/) - new favorite notebook for my [field notes](https://fieldnotesbrand.com/from-seed);
+- Xiaomi Mijia Kacogreen Signing Gel Ink Pen - my favorite pen for quite a few years now;
+- [A5 Flying Tiger Copenhagen Bullet Planner](https://flyingtiger.com/products/bullet-planner-a5-3029014) - my simple journal:
 
 ## preferred stack
 
