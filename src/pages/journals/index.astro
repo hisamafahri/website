@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../components/Base.astro";
-import FormattedDate from "../../components/FormattedDate.astro";
 
 const journals = (await getCollection("journals")).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
@@ -22,7 +21,10 @@ const journals = (await getCollection("journals")).sort(
               {post.data.title}
             </h4>
             <p class="ml-6 whitespace-nowrap font-mono text-sm text-gray-500">
-              <FormattedDate date={post.data.publishDate} />
+              {post.data.publishDate.toLocaleDateString("en-us", {
+                year: "numeric",
+                month: "short",
+              })}
             </p>
           </a>
         </li>
