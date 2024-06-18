@@ -11,6 +11,7 @@ publishDate: "18 Apr 2024"
 - [MyPocket](https://github.com/hisamafahri/mypocket)
 - [CodeFly](https://github.com/hisamafahri/codefly)
 - [ngoding.org](https://github.com/ngodingorg/ngodingorg)
+- [statuses](https://github.com/hisamafahri/statuses)
 - [coco](https://github.com/hisamafahri/coco)
 - [create-min-app](https://github.com/hisamafahri/create-min-app)
 - [samstack](https://github.com/hisamafahri/samstack)
