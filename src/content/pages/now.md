@@ -1,7 +1,7 @@
 ---
 title: "Now"
 description: "What I have been up to lately"
-publishDate: "10 Jun 2024"
+publishDate: "24 Jun 2024"
 ---
 
 ## now
@@ -14,6 +14,7 @@ I have been trying my best to have a lot of meaningful things to do every moment
 - Reading a lot of books, articles, and newsletters.
 - Writing a ton. On my [journal](https://hisam.dev/journals), on my [digital](https://maggieappleton.com/garden-history) [Zettelkasten](https://zettelkasten.de/overview) with [logseq](https://logseq.com), and on [my pen and paper](https://hisam.dev/uses);
 - Wanting to write my own "life documentations" (inspired by [this](https://luke.hsiao.dev/blog/housing-documentation) articles);
+- Learning more in depth more about low-level programming languages, especially [C](<https://en.wikipedia.org/wiki/C_(programming_language)>);
 - Occasionally learning Piano getting more serious learning to play golf;
 
 ---
