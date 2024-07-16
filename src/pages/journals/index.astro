@@ -17,10 +17,10 @@ const journals = (await getCollection("journals")).sort(
             href={`/journals/${post.slug}/`}
             class="flex items-start justify-between"
           >
-            <h4 class="text-gray-50 opacity-75 hover:text-gray-50 hover:opacity-100">
+            <h4 class="text-gray-800 opacity-75 hover:text-gray-900 hover:opacity-100">
               {post.data.title}
             </h4>
-            <p class="ml-6 whitespace-nowrap font-mono text-sm text-gray-500">
+            <p class="ml-6 whitespace-nowrap font-serif text-sm text-gray-500">
               {post.data.publishDate.toLocaleDateString("en-us", {
                 year: "numeric",
                 month: "short",

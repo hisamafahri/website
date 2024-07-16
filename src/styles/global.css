@@ -2,10 +2,10 @@
 
 @layer base {
   html {
-    @apply font-sans leading-6 antialiased;
+    @apply font-serif leading-6 antialiased;
   }
   body {
-    @apply bg-[#111111] text-gray-50;
+    @apply bg-[#FDFDFD] text-gray-800;
   }
   a {
     @apply text-blue-500 hover:text-blue-400;
@@ -13,13 +13,13 @@
   h1,
   h2,
   h3 {
-    @apply my-4 font-mono text-gray-500;
+    @apply my-4 font-serif text-2xl font-medium text-gray-800;
   }
   p {
     @apply mt-2;
   }
   pre {
-    @apply my-4 rounded-lg !bg-[#24292F] px-6 py-6;
+    @apply my-4 rounded-lg !bg-zinc-800 px-6 py-6;
   }
   blockquote {
     @apply my-6 ml-4 border-l border-gray-500 pl-6 italic opacity-80;
@@ -28,7 +28,7 @@
     @apply my-5 w-full;
   }
   th {
-    @apply border-b border-dashed border-gray-500 px-4 text-left font-mono text-sm text-gray-400;
+    @apply border-b border-dashed border-gray-500 px-4 text-left font-serif text-sm text-gray-400;
   }
   td {
     @apply px-2 py-1;
@@ -40,7 +40,7 @@
     @apply my-2;
   }
   hr {
-    @apply my-12 border border-gray-600;
+    @apply my-12 border border-gray-200;
   }
 }
 

@@ -1,7 +1,7 @@
 ---
 title: "Uses"
 description: "Things that I personally use"
-publishDate: "02 Apr 2024"
+publishDate: "16 Jul 2024"
 ---
 
 ## uses
@@ -11,7 +11,7 @@ A collection of things that I use day-to-day to do things and improve things.
 ## software
 
 - [Neovim](https://neovim.io/) - my primary weapon. You can check out [my configuration](https://github.com/hisamafahri/dotfiles);
-- [Alacritty](https://alacritty.org/) - the best terminal out there for me;
+- [Wezterm](https://wezfurlong.org/wezterm/index.html) - the best terminal out there for me;
 - [Atuin](https://github.com/atuinsh/atuin) - my command history manager. Because my command hitory is precious;
 - [Lazygit](https://github.com/jesseduffield/lazygit) - can't stand to use regular git cli all the time;
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/) - simple, get things done;
