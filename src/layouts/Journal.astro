@@ -9,7 +9,9 @@ const { title, description, publishDate } = Astro.props;
 ---
 
 <Base title={title} description={description}>
-  <article class="mb-24 mt-16 h-full">
+  <h1 class="mb-0">{title}</h1>
+  <p class="italic text-gray-500">{description}</p>
+  <article class="mb-24 mt-8 h-full">
     <slot />
     <div class="mt-8">
       <p class="font-serif text-gray-500">
