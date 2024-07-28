@@ -8,8 +8,8 @@ const journals = (await getCollection("journals")).sort(
 ---
 
 <Base title="Journals" description="My thoughts, experiences, and discoveries">
-  <h2 class="mb-4">journals</h2>
-  <ul class="ml-5 max-h-[36rem] space-y-3 overflow-y-auto pr-4">
+  <h2 class="mb-8">journals</h2>
+  <ul class="space-y-3">
     {
       journals.map((post) => (
         <li>
