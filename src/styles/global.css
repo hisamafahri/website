@@ -42,9 +42,22 @@
   hr {
     @apply my-12 border border-gray-200;
   }
+  ol {
+    @apply list-decimal;
+  }
 }
 
 li::marker {
+  content: "— ";
+  font-size: 1.2em;
+}
+
+ol li::marker {
+  content: normal;
+  font-size: 1em;
+}
+
+.footnotes li::marker {
   content: "— ";
   font-size: 1.2em;
 }
