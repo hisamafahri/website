@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ["Spectral", "serif"],
-        mono: ["Geist Mono", "monospace"],
+        serif: ["'Source Serif 4'", "serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
     },
   },
