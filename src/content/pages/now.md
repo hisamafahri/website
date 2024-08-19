@@ -1,7 +1,7 @@
 ---
 title: "Now"
 description: "What I have been up to lately"
-publishDate: "05 Aug 2024"
+publishDate: "19 Aug 2024"
 ---
 
 ## now
@@ -12,9 +12,9 @@ I have been trying my best to have a lot of meaningful things to do every moment
 - Product & engineering at [Workmate](https://workmate.asia);
 - "Stealthing" something 🤫;
 - Reading a lot of books, articles, and newsletters (mostly from the [Hacker News](https://news.ycombinator.com));
-- Writing more.
-  - On my [journal](https://hisam.dev/journals), on my [digital](https://maggieappleton.com/garden-history) [Zettelkasten](https://zettelkasten.de/overview), and on [my pen and paper](https://hisam.dev/uses);
-  - Grow my Evergreen notes with [Neovim](https://neovim.io) + Markdown 🌱;
+- Writing more:
+  - On my [journal](https://hisam.dev/journals) and on [my pen and paper](https://hisam.dev/uses);
+  - Grow my [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes) with [Obsidian](https://obsidian.md) 🌱;
 - Occasionally learning Piano getting more serious learning to play golf;
 
 ---
