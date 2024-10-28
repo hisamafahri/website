@@ -1,7 +1,7 @@
 ---
 title: "Now"
 description: "What I have been up to lately"
-publishDate: "20 Oct 2024"
+publishDate: "28 Oct 2024"
 ---
 
 ## now
