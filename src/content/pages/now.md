@@ -1,7 +1,7 @@
 ---
 title: "Now"
 description: "What I have been up to lately"
-publishDate: "13 Dec 2024"
+publishDate: "24 Dec 2024"
 ---
 
 ## now
@@ -11,7 +11,7 @@ I have been trying my best to have a lot of meaningful things to do every moment
 - Living in BSD City, ID;
 - Product & engineering at [Workmate](https://workmate.asia);
 - Reading a lot of books, articles, and newsletters (mostly from the [Hacker News](https://news.ycombinator.com));
-- Building [Thingpie](https://thingpie.com);
+- Enjoying some holidays;
 - 🍰🔒
 - Writing more:
   - On my [journal](https://hisam.dev/journals) and on [my pen and paper](https://hisam.dev/uses);
