@@ -1,7 +1,7 @@
 ---
 title: "Now"
 description: "What I have been up to lately"
-publishDate: "20 Jan 2025"
+publishDate: "06 Feb 2025"
 ---
 
 ## now
@@ -16,8 +16,7 @@ I have been trying my best to have a lot of meaningful things to do every moment
 - Writing more:
   - On my [journal](https://hisam.dev/journals) and on [my pen and paper](https://hisam.dev/uses);
   - Grow my [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes) with [Obsidian](https://obsidian.md) 🌱;
-- Learning Japanese language (still super basic and just getting started);
-- Occasionally learning Piano getting more serious learning to play golf;
+- Recovering from a fever last week;
 
 ---
 
