@@ -1,7 +1,7 @@
 ---
 title: "Uses"
 description: "Things that I personally use"
-publishDate: "27 Dec 2024"
+publishDate: "06 Apr 2024"
 ---
 
 ## uses
@@ -30,7 +30,6 @@ A collection of things that I use day-to-day to do things and improve things.
 
 ## other tools
 
-- [A6 Midori MD Paper Notebook](https://md.midori-japan.co.jp/en/products/mdnote/) - new favorite notebook for my [field notes](https://fieldnotesbrand.com/from-seed);
-- Xiaomi Mijia Kacogreen Signing Gel Ink Pen - my favorite pen for quite a few years now;
-- [A5 Flying Tiger Copenhagen Bullet Planner](https://flyingtiger.com/products/bullet-planner-a5-3029014) - my simple journal;
-- SAKAE Tomoe River Paper Softcover Notebook A5 Blank - my desk capture companion;
+- [Midori MD Paper Notebook](https://md.midori-japan.co.jp/en/products/mdnote/) (Dotted, A5) - new favorite notebook for my [field notes](https://fieldnotesbrand.com/from-seed);
+- [LAMY Safari Fountain Pen](https://www.jetpens.com/blog/LAMY-safari-A-Comprehensive-Guide/pt/176) (Black, EF) - my favorite pen for quite a while now;
+- [SAKAE Tomoe River Paper Softcover Notebook](https://www.jetpens.com/Sakae-TP-Tomoe-River-S-Softcover-Notebook-A5-Blank-White/pd/38918) (Blank, A5) - my desk capture companion;
