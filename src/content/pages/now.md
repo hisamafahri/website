@@ -1,7 +1,7 @@
 ---
 title: "Now"
 description: "What I have been up to lately"
-publishDate: "17 Mar 2025"
+publishDate: "06 Apr 2025"
 ---
 
 ## now
@@ -9,7 +9,7 @@ publishDate: "17 Mar 2025"
 I have been trying my best to have a lot of meaningful things to do every moment of my life. Here's what I have been up to lately:
 
 - Living in BSD City, ID;
-- Product & engineering at [PersolKelly](https://www.persolkelly.com/);
+- Product & engineering at [Persol APAC](https://www.persol-group.co.jp/en/);
 - Reading a lot of books, articles, and newsletters (mostly from the [Hacker News](https://news.ycombinator.com));
   - Currently reading [Sönke Ahrens's book](https://www.goodreads.com/book/show/34507927-how-to-take-smart-notes);
 - Writing more:
