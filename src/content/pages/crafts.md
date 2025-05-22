@@ -1,14 +1,13 @@
 ---
 title: "Crafts"
 description: "Things that I made and tinkered with"
-publishDate: "18 Apr 2024"
+publishDate: "23 May 2025"
 ---
 
 ## crafts
 
 ## tools
 
-- [MyPocket](https://github.com/hisamafahri/mypocket)
 - [CodeFly](https://github.com/hisamafahri/codefly)
 - [ngoding.org](https://github.com/ngodingorg/ngodingorg)
 - [http](https://github.com/hisamafahri/http)
@@ -21,6 +20,7 @@ publishDate: "18 Apr 2024"
 - [music-notes](https://github.com/hisamafahri/music-notes)
 - [noted](https://notes.hisam.dev)
 - [wipe-for-you](https://github.com/hisamafahri/wipe-for-you)
+- [MyPocket](https://github.com/hisamafahri/mypocket) (deprecated)
 
 ## experiments
 
