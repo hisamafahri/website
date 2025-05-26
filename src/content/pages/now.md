@@ -1,7 +1,7 @@
 ---
 title: "Now"
 description: "What I have been up to lately"
-publishDate: "12 May 2025"
+publishDate: "26 May 2025"
 ---
 
 ## now
@@ -11,7 +11,7 @@ I have been trying my best to have a lot of meaningful things to do every moment
 - Living in BSD City, ID;
 - Product & engineering at [Persol APAC](https://www.persol-group.co.jp/en/);
 - Reading a lot of books, articles, and newsletters (mostly from the [Hacker News](https://news.ycombinator.com));
-  - Currently reading [Sönke Ahrens's book](https://www.goodreads.com/book/show/34507927-how-to-take-smart-notes);
+  - Currently reading [The Book](https://www.goodreads.com/book/show/138825075-the-book);
 - Writing more:
   - On my [journal](https://hisam.dev/journals) and on [my pen and paper](https://hisam.dev/uses);
   - Grow my [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes) with [Obsidian](https://obsidian.md) 🌱;
