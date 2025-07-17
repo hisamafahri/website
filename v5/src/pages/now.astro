@@ -1,0 +1,73 @@
+---
+import { format } from "date-fns";
+
+import Layout from "../components/Layout.astro";
+import Link from "../components/Link.astro";
+import HomeLink from "../components/HomeLink.astro";
+
+const lastUpdated = "2025-07-17";
+---
+
+<Layout
+  description="Hisam — is a software developer, voracious reader, active (trying his best) writer"
+>
+  <div class="mt-24">
+    <HomeLink />
+    <h1 class="mt-4 text-3xl font-medium">Now</h1>
+    <p class="text-lg italic">
+      Last updated: {format(new Date(lastUpdated), "dd MMM yyyy")}
+    </p>
+
+    <div class="mt-4 space-y-4">
+      <p>
+        I have been trying my best to have a lot of meaningful things to do
+        every moment of my life. Here's what I have been up to lately:
+      </p>
+      <ul class="ml-5 list-disc">
+        <li>Living in BSD City, ID;</li>
+        <li>
+          Product & engineering at <Link
+            href="https://www.persol-group.co.jp/en/"
+            target="_blank">PERSOL APAC</Link
+          >;
+        </li>
+        <li>
+          Reading a lot of books, articles, and newsletters (mostly from the <Link
+            href="https://news.ycombinator.com"
+            target="_blank">Hacker News</Link
+          >);
+          <ul class="ml-5">
+            <li>
+              Currently reading <Link
+                href="https://www.goodreads.com/book/show/138825075-the-book"
+                target="_blank">The Book</Link
+              >;
+            </li>
+          </ul>
+        </li>
+        <li>
+          Writing more:
+          <ul class="ml-5 list-disc">
+            <li>
+              On my <Link href="/journals" target="_blank">journal</Link> and on
+              <Link href="/uses">my pen and paper</Link>;
+            </li>
+            <li>
+              Grow my <Link
+                href="https://notes.andymatuschak.org/Evergreen_notes"
+                target="_blank">Evergreen notes</Link
+              > with <Link href="https://obsidian.md" target="_blank"
+                >Obsidian</Link
+              >;
+            </li>
+          </ul>
+        </li>
+        <li>
+          Building <Link href="https://cakeauth.com" target="_blank"
+            >CakeAuth</Link
+          > - an authentication as a service;
+        </li>
+      </ul>
+    </div>
+  </div>
+</Layout>
