@@ -1,0 +1,25 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{title ? `${title} | Hisam Fahri` : "Hisam Fahri"}</title>
+    <meta
+      name="title"
+      content={title ? `${title} | Hisam Fahri` : "Hisam Fahri"}
+    />
+    <meta name="description" content={description} />
+  </head>
+  <body class="mx-auto mt-12 w-full max-w-2xl px-4 text-gray-950 antialiased">
+    <slot />
+  </body>
+</html>

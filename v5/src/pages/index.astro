@@ -1,0 +1,41 @@
+---
+import Layout from "../components/Layout.astro";
+import Link from "../components/Link.astro";
+import LinkIcon from "../components/LinkIcon.astro";
+import Twitter from "../icons/twitter.astro";
+import GitHub from "../icons/github.astro";
+import Email from "../icons/email.astro";
+---
+
+<Layout
+  description="Hisam — is a software developer, voracious reader, active (trying his best) writer"
+>
+  <div class="mt-24">
+    <h1 class="text-3xl font-medium">Hisam Fahri</h1>
+    <p class="text-lg italic">Software wizard</p>
+    <p class="mt-4 text-lg">
+      I am <Link href="https://cakeauth.com" target="_blank"
+        >the founder of CakeAuth</Link
+      >, and also an <Link
+        href="https://www.persol-group.co.jp/en/"
+        target="_blank">Engineer at PERSOL</Link
+      >. I <Link href="/now">read often</Link>, <Link href="/journals"
+        >write regularly</Link
+      >. I <Link href="crafts">build things</Link> and <Link
+        href="https://github.com/hisamafahri">do open-source</Link
+      >.
+    </p>
+  </div>
+
+  <div class="mt-8 flex">
+    <LinkIcon href="https://x.com/hisamafahri" target="_blank">
+      <Twitter />
+    </LinkIcon>
+    <LinkIcon href="https://github.com/hisamafahri" target="_blank">
+      <GitHub />
+    </LinkIcon>
+    <LinkIcon href="mailto:iam@hisamafahri.com">
+      <Email />
+    </LinkIcon>
+  </div>
+</Layout>
