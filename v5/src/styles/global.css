@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Instrument Serif", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-instrument: "Instrument Serif", sans-serif;
 }
 
 li::marker {
