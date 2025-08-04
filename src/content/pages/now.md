@@ -1,7 +1,7 @@
 ---
 title: "Now"
 description: "What I have been up to lately"
-publishDate: "21 Jul 2025"
+publishDate: "04 Aug 2025"
 ---
 
 ## now
@@ -14,8 +14,6 @@ I have been trying my best to have a lot of meaningful things to do every moment
 - Writing more:
   - On my [journal](https://hisam.dev/journals) and on [my pen and paper](https://hisam.dev/uses);
   - Grow my [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes) with [Obsidian](https://obsidian.md) 🌱;
-- Building [CakeAuth](https://cakeauth.com) - an authentication as a service;
-- Building [an authentication-proxy](https://x.com/HisamAFahri/status/1943204504968593620)
 
 ---
 
