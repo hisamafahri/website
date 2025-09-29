@@ -19,3 +19,8 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+.hugo_build.lock
+node_modules/
+public/
+resources/
+themes/

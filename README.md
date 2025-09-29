@@ -1,11 +1,12 @@
-![preview](https://i.imgur.com/39dmJjZ.png)
+# Personal Site
 
-Heavily inspired by [Morgan's site](https://essens.dev/).
+Inspired by [BearBlog](https://bearblog.dev/).
 
-### Author
+
+## Author
 
 [@hisamafahri](https://github.com/hisamafahri)
 
-### License
+## License
 
 [MIT](LICENSE)
