@@ -5,6 +5,7 @@ title = "Crafts"
 ## tools
 
 - [archive.nvim](https://github.com/hisamafahri/archive.nvim)
+- [asdf-odin](https://github.com/hisamafahri/asdf-odin)
 - [http](https://github.com/hisamafahri/http)
 - [coco](https://github.com/hisamafahri/coco)
 - [nit](https://github.com/hisamafahri/nit)
