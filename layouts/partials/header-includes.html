@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- asynchronously load Google Fonts -->
+<!-- https://csswizardry.com/2020/05/the-fastest-google-fonts/#google-fonts-async-snippet -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style"
+      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Noto+Emoji&display=swap" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Noto+Emoji&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC&display=swap" />
+</noscript>
+
+{{ $htoptions := (dict "targetPath" "/css/hugo-tufte.min.css" "outputStyle" "compressed" "enableSourceMap" true "transpiler" "dartsass") }}
+{{ $htstyle := resources.Get "scss/hugo-tufte.scss"| resources.ExecuteAsTemplate "main.scss" .  | css.Sass $htoptions }}
+<link rel="stylesheet" href="{{ $htstyle.Permalink | relURL }}">
+
+{{ $ht_o_options := (dict "targetPath" "/css/hugo-tufte-options.min.css" "outputStyle" "compressed" "enableSourceMap" true "transpiler" "dartsass") }}
+{{ $ht_o_style := resources.Get "scss/hugo-tufte-options.scss"| resources.ExecuteAsTemplate "main.scss" .  | css.Sass $ht_o_options }}
+<link rel="stylesheet" href="{{ $ht_o_style.Permalink | relURL }}">
+
+<link rel="stylesheet" href="{{ "/css/hugo-tufte-override.css" | relURL }}">
