@@ -8,6 +8,9 @@ TZ = "Europe/Oslo"
 [build]
 publish = "public"
 command = """\
-  git config core.quotepath false && \
-  hugo --gc --minify --baseURL "${URL}"
+  curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+  tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+  rm dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+  export PATH="$PWD/dart-sass:$PATH" && \
+  hugo --gc --minify
   """

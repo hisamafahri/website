@@ -36,27 +36,7 @@ enableRobotsTXT = true
   KaTeXCDN = "//cdn.jsdelivr.net/npm"
   sansSubtitle = false
   centerArticle = false
-  copyright = "© 2025"
-  copyrightHolder = "Hisam Fahri"
-  # Social links examples:
-  # github = "slashformotion"
-  # gitlab = "slashformotion"
-  # linkedin = "<insert_here>"
-  # twitter = "slashformotion"
-  # patreon = ""
-  # youtube = "user/ChromeDevelopers"
-  # medium = "slashformotion"
-  # reddit = "Slashformotion"
-  # stackoverflow = "16609732/slashformotion"
-  # instagram = "google"
-  # mastodon = "instance.url/@username"
-  # orcid = "0000-0003-0634-3275"
-  # google_scholar = "jm5QaHkAAAAJ"
-
-# [taxonomies]
-#   category = "categories"
-#   series = "series"
-#   tag = "tags"
+  copyright = "© 2025 Hisam Fahri"
 
 [menu]
   [[menu.nav]]
