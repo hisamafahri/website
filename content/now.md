@@ -2,7 +2,7 @@
 title = "Now"
 +++
 
-_Last updated: 10 Nov 2025_
+_Last updated: 08 Dec 2025_
 
 I have been trying my best to have a lot of meaningful things to do every moment of my life. Here's what I have been up to lately:
 
@@ -13,8 +13,7 @@ I have been trying my best to have a lot of meaningful things to do every moment
 - Writing more:
   - On my [journal](https://hisam.dev/journals) and on [my pen and paper](https://hisam.dev/uses);
   - Grow my [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes) with [Obsidian](https://obsidian.md) 🌱;
-- Building [CakeAuth](https://cakeauth.com)
-  - Target: to be more spec-compliant
+- Learning Mandarin (汉语)
 
 ---
 
