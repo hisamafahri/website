@@ -36,7 +36,7 @@ enableRobotsTXT = true
   KaTeXCDN = "//cdn.jsdelivr.net/npm"
   sansSubtitle = false
   centerArticle = false
-  copyright = "© 2025 Hisam Fahri"
+  copyright = "© 2026 Hisam Fahri"
 
 [menu]
   [[menu.nav]]
