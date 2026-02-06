@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
 Development server for Hisam's Journal
-Runs a local server on port 3000 with hot-reload support
+Runs a local server on port 3000 serving pre-built HTML files
 """
 
 import http.server
 import socketserver
 import os
 import re
+import subprocess
 from pathlib import Path
 from urllib.parse import urlparse, unquote
 
@@ -15,6 +16,10 @@ PORT = 3000
 
 class JournalHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     """Custom HTTP request handler with redirect logic"""
+    
+    def __init__(self, *args, **kwargs):
+        # Serve from dist/ directory
+        super().__init__(*args, directory='dist', **kwargs)
     
     def do_GET(self):
         """Handle GET requests with custom routing and redirects"""
@@ -34,21 +39,12 @@ class JournalHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.end_headers()
             return
         
-        # Handle static pages: redirect /about/ to /about
-        static_pages = ['about', 'uses', 'now', 'crafts', 'contact', 'projects']
-        for page in static_pages:
-            if path == f'/{page}/':
-                self.send_response(301)
-                self.send_header('Location', f'/{page}')
-                self.end_headers()
-                return
-        
         # Handle journal URLs with specific redirect logic
         if path.startswith('/journals/'):
             journal_path = path.replace('/journals/', '')
             
-            # Match pattern: /journals/YYYY-MM-DD or /journals/YYYY-MM-DD/
-            date_only_match = re.match(r'^(\d{4}-\d{2}-\d{2})/?$', journal_path)
+            # Match pattern: /journals/YYYY-MM-DD
+            date_only_match = re.match(r'^(\d{4}-\d{2}-\d{2})$', journal_path)
             if date_only_match:
                 # Redirect to /journals/YYYY-MM-DD/normalized-title
                 date_slug = date_only_match.group(1)
@@ -79,35 +75,36 @@ class JournalHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_error(404, 'Journal not found')
                 return
             
-            # Match pattern: /journals/YYYY-MM-DD/anything/ (with trailing slash)
-            path_with_slash_match = re.match(r'^(\d{4}-\d{2}-\d{2})/(.+)/$', journal_path)
-            if path_with_slash_match:
-                date_slug = path_with_slash_match.group(1)
-                title_part = path_with_slash_match.group(2)
-                
-                # Redirect to URL without trailing slash
-                redirect_url = f'/journals/{date_slug}/{title_part}'
-                self.send_response(301)
-                self.send_header('Location', redirect_url)
-                self.end_headers()
-                return
-            
-            # Match pattern: /journals/YYYY-MM-DD/anything (without trailing slash)
+            # Match pattern: /journals/YYYY-MM-DD/anything
             path_match = re.match(r'^(\d{4}-\d{2}-\d{2})/(.+)$', journal_path)
             if path_match:
                 date_slug = path_match.group(1)
-                # Any string after the date is acceptable, we'll resolve to the markdown file
-                # The client-side JavaScript will handle displaying the correct content
-                # Just verify the markdown file exists
+                provided_slug = path_match.group(2)
+                
+                # Check if markdown file exists
                 md_file = Path(f'content/journals/{date_slug}.md')
                 if not md_file.exists():
                     self.send_error(404, 'Journal not found')
                     return
-                # Fall through to serve index.html
+                
+                # Serve the _fallback.html which contains the journal content
+                # This allows any slug after the date to work
+                self.path = f'/journals/{date_slug}/_fallback.html'
         
-        # For all other paths, serve index.html (SPA)
-        if path == '/' or path.startswith('/journals') or path in [f'/{p}' for p in static_pages]:
-            self.path = '/index.html'
+        # For clean URLs, try appending /index.html if path is a directory
+        if not path.endswith('.html') and not path.endswith('.xml') and not path.endswith('.txt') and not path.endswith('.ico') and not path.endswith('.js') and not path.endswith('.css'):
+            # Try to serve index.html from that directory
+            test_path = (Path('dist') / path.lstrip('/')).resolve()
+            
+            # Security check: ensure the path is within dist/
+            try:
+                test_path.relative_to(Path('dist').resolve())
+            except ValueError:
+                self.send_error(403, 'Forbidden')
+                return
+            
+            if test_path.is_dir():
+                self.path = path.rstrip('/') + '/index.html'
         
         # Serve the file
         return super().do_GET()
@@ -122,8 +119,26 @@ class JournalHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header('Expires', '0')
         return super().end_headers()
 
+def run_build():
+    """Run build.py first"""
+    print("Building site...")
+    result = subprocess.run(['python3', 'build.py'], capture_output=True, text=True)
+    
+    if result.returncode != 0:
+        print("Build failed!")
+        print(result.stderr)
+        return False
+    
+    print(result.stdout)
+    return True
+
 def run_server():
     """Start the development server"""
+    
+    # Build first
+    if not run_build():
+        return
+    
     Handler = JournalHTTPRequestHandler
     
     # Change to the project directory
@@ -134,7 +149,8 @@ def run_server():
         print(f"🚀 Development server running!")
         print(f"   URL: http://localhost:{PORT}")
         print("="*50)
-        print("\nPress Ctrl+C to stop the server\n")
+        print("\nPress Ctrl+C to stop the server")
+        print("(Restart server to rebuild after changes)\n")
         
         try:
             httpd.serve_forever()

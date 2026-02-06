@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
 Build script for Hisam's Journal
-Generates static output in dist/ directory ready to serve
+Generates static HTML files (no markdown files served to client)
 """
 
 import os
+import json
 import shutil
 import re
 from pathlib import Path
@@ -17,6 +18,165 @@ BASE_URL = "https://hisam.dev"
 CONTENT_DIR = Path("content")
 DIST_DIR = Path("dist")
 JOURNALS_DIR = CONTENT_DIR / "journals"
+
+# HTML template
+HTML_TEMPLATE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content="{description}">
+    <meta property="og:title" content="{title}">
+    <meta property="og:description" content="{description}">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="{canonical_url}">
+    <link rel="alternate" type="application/rss+xml" title="Hisam's Journal RSS Feed" href="/rss.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/prism.css" rel="stylesheet" />
+    <style>
+        body {{
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }}
+        
+        nav {{
+            background-color: #004F19;
+            padding: 10px 0;
+            margin-bottom: 40px;
+        }}
+        
+        nav .nav-container {{
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }}
+        
+        nav .site-title {{
+            font-weight: bold;
+            font-size: 18px;
+        }}
+        
+        nav .site-title a {{
+            text-decoration: none;
+            color: #FFF;
+        }}
+        
+        nav .nav-links {{
+            display: flex;
+            gap: 20px;
+        }}
+
+        nav .nav-links a {{
+            color: #FFF;
+            text-decoration: none;
+        }}
+        
+        #app {{
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }}
+        
+        a {{ color: #00e; }}
+        a:visited {{ color: #551a8b; }}
+        img {{ max-width: 100%; }}
+        pre {{ overflow: auto; background: none !important; }}
+        code[class*="language-"], pre[class*="language-"] {{ 
+          background: none !important; 
+          font-size: 0.8rem;
+        }}
+        
+        h1, h2, h3 {{
+            position: relative;
+        }}
+        
+        .header-link {{
+            opacity: 0;
+            margin-left: 8px;
+            text-decoration: none;
+            color: #ccc;
+            font-weight: normal;
+            transition: opacity 0.2s;
+        }}
+        
+        h1:hover .header-link,
+        h2:hover .header-link,
+        h3:hover .header-link {{
+            opacity: 1;
+        }}
+        
+        ul, ol {{
+            margin: 16px 0;
+            padding-left: 30px;
+        }}
+        
+        li {{
+            margin: 8px 0;
+            line-height: 1.6;
+        }}
+        
+        hr {{
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 30px 0;
+        }}
+        
+        table {{ border-collapse: collapse; }}
+        td, th {{ border: 1px solid #000; padding: 4px; }}
+        blockquote {{
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 3px solid #ccc;
+            color: #666;
+            font-style: italic;
+        }}
+        blockquote em {{
+            font-style: italic;
+        }}
+        
+        @media (min-width: 1024px) {{
+            nav .nav-container {{
+                max-width: 1000px;
+            }}
+            
+            #app {{
+                max-width: 1000px;
+            }}
+        }}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="site-title">
+                <a href="/">Hisam's Journal</a>
+            </div>
+            <div class="nav-links">
+                <a href="/about">about</a>
+                <a href="/now">now</a>
+                <a href="/rss.xml">rss</a>
+            </div>
+        </div>
+    </nav>
+    <div id="app">
+        {content}
+    </div>
+    <script src="/prism.js"></script>
+    <script>
+        if (typeof Prism !== 'undefined') {{
+            Prism.highlightAll();
+        }}
+    </script>
+</body>
+</html>
+"""
 
 def slugify(text):
     """Convert text to URL-friendly slug"""
@@ -128,6 +288,125 @@ def get_all_pages():
     
     return pages
 
+def generate_html_file(output_path, title, description, content, canonical_url):
+    """Generate an HTML file from template"""
+    html = HTML_TEMPLATE.format(
+        title=title,
+        description=description,
+        content=content,
+        canonical_url=canonical_url
+    )
+    
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(html)
+
+def generate_journal_html(journal):
+    """Generate HTML for a journal entry"""
+    content = f"""
+        <a href="/">← Back</a>
+        <br><br>
+        <b>{journal['title']}</b>
+        <br>
+        {journal['date']}
+        <br><br>
+        {journal['html']}
+    """
+    
+    # Main journal HTML at /journals/YYYY-MM-DD/title-slug/index.html
+    output_path = DIST_DIR / 'journals' / journal['date_slug'] / journal['title_slug'] / 'index.html'
+    canonical_url = f"{BASE_URL}/journals/{journal['slug']}"
+    
+    generate_html_file(
+        output_path,
+        journal['title'],
+        journal['description'],
+        content,
+        canonical_url
+    )
+    
+    # Create redirect HTML at /journals/YYYY-MM-DD/index.html
+    # This handles /journals/YYYY-MM-DD -> /journals/YYYY-MM-DD/title-slug
+    redirect_path = DIST_DIR / 'journals' / journal['date_slug'] / 'index.html'
+    redirect_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    redirect_html = f"""<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=/journals/{journal['slug']}">
+    <link rel="canonical" href="{BASE_URL}/journals/{journal['slug']}">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <p>Redirecting to <a href="/journals/{journal['slug']}">{journal['title']}</a>...</p>
+    <script>window.location.href='/journals/{journal['slug']}';</script>
+</body>
+</html>"""
+    
+    with open(redirect_path, 'w', encoding='utf-8') as f:
+        f.write(redirect_html)
+    
+    # Create a fallback HTML for any other slug
+    # This file will be used by a rewrite rule in Netlify
+    fallback_path = DIST_DIR / 'journals' / journal['date_slug'] / '_fallback.html'
+    generate_html_file(
+        fallback_path,
+        journal['title'],
+        journal['description'],
+        content,
+        canonical_url
+    )
+
+def generate_page_html(page):
+    """Generate HTML for a static page"""
+    output_path = DIST_DIR / page['name'] / 'index.html'
+    canonical_url = f"{BASE_URL}/{page['name']}"
+    
+    generate_html_file(
+        output_path,
+        page['title'],
+        page['description'],
+        page['html'],
+        canonical_url
+    )
+
+def generate_homepage(journals):
+    """Generate homepage with journal listing"""
+    content = '\n'.join([
+        f'<a href="/journals/{journal["slug"]}">{journal["title"]}</a><br>'
+        for journal in journals
+    ])
+    
+    output_path = DIST_DIR / 'index.html'
+    
+    generate_html_file(
+        output_path,
+        SITE_NAME,
+        'Personal blog and writing',
+        content,
+        BASE_URL
+    )
+
+def generate_manifest(journals):
+    """Generate manifest.json with metadata for client-side routing"""
+    manifest = {
+        'journals': [
+            {
+                'date_slug': j['date_slug'],
+                'title': j['title'],
+                'title_slug': j['title_slug'],
+                'description': j['description'],
+                'date': j['date'],
+                'slug': j['slug']
+            }
+            for j in journals
+        ]
+    }
+    
+    with open(DIST_DIR / 'manifest.json', 'w', encoding='utf-8') as f:
+        json.dump(manifest, f, indent=2)
+
 def generate_rss(journals):
     """Generate RSS feed"""
     rss = ET.Element('rss', version='2.0')
@@ -224,8 +503,7 @@ def copy_static_files():
         'pgp.txt',
         'prism.js',
         'prism.css',
-        'index.html',
-        'blog.js'
+        '_redirects'
     ]
     
     for filename in static_files:
@@ -236,33 +514,6 @@ def copy_static_files():
             print(f"  Copied: {filename}")
         else:
             print(f"  Warning: {filename} not found, skipping")
-
-def update_blog_js(journals):
-    """Update blog.js with auto-generated journal list"""
-    blog_js_path = Path('blog.js')
-    
-    if not blog_js_path.exists():
-        print("  Warning: blog.js not found, skipping auto-generation")
-        return
-    
-    with open(blog_js_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    
-    # Generate the journal files list
-    journal_files = [f"'{j['filename']}.md'" for j in journals]
-    journal_list = ',\n            '.join([f"'journals/{j['filename']}.md'" for j in journals])
-    
-    # Replace the hardcoded list in loadPosts()
-    pattern = r"const contentFiles = \[([\s\S]*?)\];"
-    replacement = f"const contentFiles = [\n            {journal_list}\n        ];"
-    
-    updated_content = re.sub(pattern, replacement, content)
-    
-    # Write to dist/blog.js
-    with open(DIST_DIR / 'blog.js', 'w', encoding='utf-8') as f:
-        f.write(updated_content)
-    
-    print(f"  Updated: blog.js with {len(journals)} journal entries")
 
 def build():
     """Main build function"""
@@ -275,10 +526,6 @@ def build():
     DIST_DIR.mkdir(parents=True, exist_ok=True)
     print(f"✓ Cleaned dist/ directory")
     
-    # Copy content directory
-    shutil.copytree(CONTENT_DIR, DIST_DIR / 'content', dirs_exist_ok=True)
-    print(f"✓ Copied content/ directory")
-    
     # Get all content
     print("\nLoading content...")
     journals = get_all_journals()
@@ -286,31 +533,50 @@ def build():
     print(f"  Found {len(journals)} journals")
     print(f"  Found {len(pages)} pages")
     
+    # Generate HTML files for journals
+    print("\nGenerating journal HTML files...")
+    for journal in journals:
+        generate_journal_html(journal)
+        print(f"  ✓ {journal['slug']}")
+    
+    # Generate HTML files for pages
+    print("\nGenerating page HTML files...")
+    for page in pages:
+        generate_page_html(page)
+        print(f"  ✓ {page['name']}")
+    
+    # Generate homepage
+    print("\nGenerating homepage...")
+    generate_homepage(journals)
+    print("  ✓ index.html")
+    
+    # Generate manifest
+    print("\nGenerating manifest...")
+    generate_manifest(journals)
+    print("  ✓ manifest.json")
+    
     # Generate RSS
     print("\nGenerating RSS feed...")
     rss_content = generate_rss(journals)
     with open(DIST_DIR / 'rss.xml', 'w', encoding='utf-8') as f:
         f.write(rss_content)
-    print("  ✓ Generated rss.xml")
+    print("  ✓ rss.xml")
     
     # Generate sitemap
     print("\nGenerating sitemap...")
     sitemap_content = generate_sitemap(journals, pages)
     with open(DIST_DIR / 'sitemap.xml', 'w', encoding='utf-8') as f:
         f.write(sitemap_content)
-    print("  ✓ Generated sitemap.xml")
+    print("  ✓ sitemap.xml")
     
     # Copy static files
     print("\nCopying static files...")
     copy_static_files()
     
-    # Update blog.js with auto-generated journal list
-    print("\nUpdating blog.js...")
-    update_blog_js(journals)
-    
     print("\n" + "="*50)
     print("✓ Build complete!")
     print(f"  Output directory: {DIST_DIR.absolute()}")
+    print(f"  Total HTML files: {len(journals) + len(pages) + 1}")
     print("="*50)
 
 if __name__ == '__main__':

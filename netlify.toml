@@ -12,7 +12,7 @@
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
 
-# Redirect rules for clean URLs
+# Redirect rules for clean URLs (remove trailing slashes)
 [[redirects]]
   from = "/about/"
   to = "/about"
@@ -33,15 +33,16 @@
   to = "/crafts"
   status = 301
 
-# Journal redirects: /journals/YYYY-MM-DD/ -> /journals/YYYY-MM-DD/title
+# Journal URL with trailing slash -> remove it
 [[redirects]]
-  from = "/journals/:date/"
-  to = "/journals/:date"
+  from = "/journals/:date/:slug/"
+  to = "/journals/:date/:slug"
   status = 301
-  force = false
 
-# Catch-all for SPA routing
+# Journal URL with any slug -> serve from _fallback.html (rewrite, not redirect)
+# This allows /journals/2024-01-01/any-string to resolve to the same journal
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/journals/:date/*"
+  to = "/journals/:date/_fallback.html"
   status = 200
+  force = false

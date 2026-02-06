@@ -1,0 +1,8 @@
+# Remove trailing slashes
+/about/     /about      301
+/uses/      /uses       301
+/now/       /now        301
+/crafts/    /crafts     301
+
+# Journal redirects - handled by build process creating symlinks
+# The build will create the necessary directory structure
