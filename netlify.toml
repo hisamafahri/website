@@ -12,35 +12,8 @@
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
 
-# Redirect rules for clean URLs (remove trailing slashes)
-[[redirects]]
-  from = "/about/"
-  to = "/about"
-  status = 301
-
-[[redirects]]
-  from = "/uses/"
-  to = "/uses"
-  status = 301
-
-[[redirects]]
-  from = "/now/"
-  to = "/now"
-  status = 301
-
-[[redirects]]
-  from = "/crafts/"
-  to = "/crafts"
-  status = 301
-
-# Journal URL with trailing slash -> remove it
-[[redirects]]
-  from = "/journals/:date/:slug/"
-  to = "/journals/:date/:slug"
-  status = 301
-
-# Journal URL with any slug -> serve from _fallback.html (rewrite, not redirect)
-# This allows /journals/2024-01-01/any-string to resolve to the same journal
+# Journal any-string rewrite: allows /journals/YYYY-MM-DD/any-string to work
+# This is a rewrite (200), not a redirect, so the URL stays the same
 [[redirects]]
   from = "/journals/:date/*"
   to = "/journals/:date/_fallback.html"
