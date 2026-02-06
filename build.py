@@ -503,6 +503,7 @@ def copy_static_files():
         'pgp.txt',
         'prism.js',
         'prism.css',
+        'robots.txt',
         '_redirects'
     ]
     

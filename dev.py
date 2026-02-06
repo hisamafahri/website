@@ -113,6 +113,25 @@ class JournalHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         """Convert text to URL-friendly slug"""
         return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
     
+    def send_error(self, code, message=None, explain=None):
+        """Override to serve custom 404.html"""
+        if code == 404:
+            # Serve custom 404.html
+            custom_404 = Path('dist/404.html')
+            if custom_404.exists():
+                try:
+                    self.send_response(404)
+                    self.send_header('Content-type', 'text/html')
+                    self.end_headers()
+                    with open(custom_404, 'rb') as f:
+                        self.wfile.write(f.read())
+                    return
+                except:
+                    pass
+        
+        # Fall back to default error handling
+        return super().send_error(code, message, explain)
+    
     def end_headers(self):
         """Add CORS headers for development"""
         self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate')
