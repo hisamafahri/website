@@ -43,24 +43,40 @@ class StaticHandler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
     
     def do_GET(self):
-        # For paths without trailing slash that are directories, add the slash
-        # This allows SimpleHTTPRequestHandler to properly serve index.html
         parsed_path = urlparse(self.path)
         path = parsed_path.path
         
-        # Don't modify paths that already have trailing slash or are files
-        if not path.endswith('/') and path != '':
-            # Check if this is a directory
-            file_path = path[1:] if path.startswith('/') else path
-            if os.path.isdir(file_path):
-                # Redirect to path with trailing slash
-                self.send_response(301)
-                self.send_header('Location', path + '/')
-                self.end_headers()
-                return
+        # Remove trailing slash (except for root path)
+        if path.endswith('/') and path != '/':
+            # Redirect to path without trailing slash
+            self.send_response(301)
+            new_path = path.rstrip('/')
+            # Preserve query string if present
+            new_location = new_path + ('?' + parsed_path.query if parsed_path.query else '')
+            self.send_header('Location', new_location)
+            self.end_headers()
+            return
         
         # Let SimpleHTTPRequestHandler handle the rest
         return super().do_GET()
+    
+    def send_head(self):
+        """Override send_head to handle directory serving without trailing slash redirects"""
+        parsed_path = urlparse(self.path)
+        path = parsed_path.path
+        
+        # If path doesn't end with / but is a directory, serve index.html directly
+        if not path.endswith('/') and path != '':
+            file_path = self.translate_path(path)
+            if os.path.isdir(file_path):
+                # Check if index.html exists
+                index = os.path.join(file_path, "index.html")
+                if os.path.exists(index):
+                    # Modify path to include index.html and let parent handle it
+                    self.path = path + '/index.html'
+                    return super().send_head()
+        
+        return super().send_head()
 
 class ReusableTCPServer(socketserver.TCPServer):
     allow_reuse_address = True
