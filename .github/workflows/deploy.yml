@@ -9,9 +9,10 @@ on:
       - master
 
 permissions:
-  contents: read
+  contents: write
   statuses: write
   pull-requests: write
+  deployments: write
 
 jobs:
   deploy:
