@@ -3,13 +3,6 @@
   command = "python3 build.py"
 
 [[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "no-referrer-when-downgrade"
-
-[[headers]]
   for = "/rss.xml"
   [headers.values]
     Content-Type = "application/rss+xml; charset=utf-8"
