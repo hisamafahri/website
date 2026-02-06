@@ -2,13 +2,6 @@
   publish = "dist"
   command = "python3 build.py"
 
-# Redirect trailing slashes to non-trailing slash (except root)
-[[redirects]]
-  from = "/*/"
-  to = "/:splat"
-  status = 301
-  force = true
-
 [[headers]]
   for = "/*"
   [headers.values]

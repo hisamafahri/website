@@ -988,9 +988,50 @@ def generate_sitemap():
     print(f"  Total URLs: {len(urls)}")
 
 
+def generate_redirects():
+    """Generate _redirects file for Netlify to handle trailing slashes"""
+    content_dir = Path(__file__).parent / "content"
+    
+    redirects = []
+    
+    # Add redirects for static pages
+    for md_file in content_dir.glob("*.md"):
+        page_name = md_file.stem
+        redirects.append(f"/{page_name}/  /{page_name}  301")
+    
+    # Add redirects for journal posts
+    journals_dir = content_dir / "journals"
+    if journals_dir.exists():
+        for md_file in sorted(journals_dir.glob("*.md"), reverse=True):
+            with open(md_file, "r", encoding="utf-8") as f:
+                content = f.read()
+            
+            meta = parse_frontmatter(content)
+            
+            if not meta.get("title"):
+                continue
+            
+            # Generate slug
+            date_slug = md_file.stem
+            title_slug = slugify(meta["title"])
+            slug = f"{date_slug}/{title_slug}"
+            
+            redirects.append(f"/journals/{slug}/  /journals/{slug}  301")
+    
+    # Write _redirects file
+    output_file = BUILD_DIR / "_redirects"
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(redirects))
+        f.write("\n")
+    
+    print(f"✓ Generated _redirects: {output_file}")
+    print(f"  Total redirects: {len(redirects)}")
+
+
 if __name__ == "__main__":
     print("Building Hisam's Journal...\n")
     generate_static_site()
     generate_rss()
     generate_sitemap()
+    generate_redirects()
     print("\n✓ Build complete!")
