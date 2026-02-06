@@ -1,12 +1,22 @@
-# Personal Site
+# Hisam's Journal
 
-Inspired by [BearBlog](https://bearblog.dev/).
+A minimal, fast blog built with vanilla JavaScript and Python.
 
+## Quick Start
 
-## Author
+```bash
+# Start development server
+python3 dev.py
 
-[@hisamafahri](https://github.com/hisamafahri)
+# Preview with production caching
+python3 dev.py --prod
 
-## License
+# Build for deployment
+python3 build.py
+```
 
-[MIT](LICENSE)
+On all command, the server will:
+- Generate pages manifest from `content/*.md` files
+- Generate RSS feed from `content/journals/*.md` files  
+- Generate `sitemap.xml`
+- Start server at `http://localhost:3000`

@@ -20,10 +20,9 @@ title = "Crafts"
 - [samstack](https://github.com/hisamafahri/samstack)
 - [editr](https://github.com/hisamafahri/editr)
 - [wipe-for-you](https://github.com/hisamafahri/wipe-for-you)
-- [MyPocket](https://github.com/hisamafahri/mypocket) (deprecated)
+- [MyPocket](https://github.com/hisamafahri/mypocket)
 - [CodeFly](https://github.com/hisamafahri/codefly)
 - [create-min-app](https://github.com/hisamafahri/create-min-app)
-
 
 ## experiments
 
@@ -36,4 +35,5 @@ title = "Crafts"
 - [httop](https://github.com/hisamafahri/httop)
 - [dockoo](https://github.com/hisamafahri/dockoo)
 
-[And many more...](https://github.com/hisamafahri)
+[and more...](https://github.com/hisamafahri)
+

@@ -1,0 +1,150 @@
+<?xml version="1.0" ?>
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Hisam's Journal</title>
+    <link>https://hisam.dev</link>
+    <description>Personal blog and writing</description>
+    <language>en-us</language>
+    <ns0:link href="https://hisam.dev/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Really, How to Find Things to do?</title>
+      <link>https://hisam.dev/journals/2025-07-14/really-how-to-find-things-to-do</link>
+      <description>I currently really not sure how to do that</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2025-07-14/really-how-to-find-things-to-do</guid>
+      <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Elves Way</title>
+      <link>https://hisam.dev/journals/2025-06-05/the-elves-way</link>
+      <description>An Elves vs Humans perspective on working</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2025-06-05/the-elves-way</guid>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A Stupid Guide on UI Design for Engineers</title>
+      <link>https://hisam.dev/journals/2025-02-26/a-stupid-guide-on-ui-design-for-engineers</link>
+      <description>A stupidly simple, easy-to-understand for engineers out there to craft decent-looking apps</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2025-02-26/a-stupid-guide-on-ui-design-for-engineers</guid>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI-less</title>
+      <link>https://hisam.dev/journals/2025-02-10/ai-less</link>
+      <description>Sometimes, little-to-no AI is fun.</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2025-02-10/ai-less</guid>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>It's Hard to Strategize</title>
+      <link>https://hisam.dev/journals/2024-07-27/it-s-hard-to-strategize</link>
+      <description>My self-reflection on strategy</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2024-07-27/it-s-hard-to-strategize</guid>
+      <pubDate>Sat, 27 Jul 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Start Things from Scratch</title>
+      <link>https://hisam.dev/journals/2024-07-06/start-things-from-scratch</link>
+      <description>On the culture of starting things from scratch.</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2024-07-06/start-things-from-scratch</guid>
+      <pubDate>Sat, 06 Jul 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Over-documenting</title>
+      <link>https://hisam.dev/journals/2024-06-17/over-documenting</link>
+      <description>On over-documenting your work.</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2024-06-17/over-documenting</guid>
+      <pubDate>Mon, 17 Jun 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A Letter to a New Joiner</title>
+      <link>https://hisam.dev/journals/2024-04-28/a-letter-to-a-new-joiner</link>
+      <description>A simple, letter for every new software engineering team member out there</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2024-04-28/a-letter-to-a-new-joiner</guid>
+      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Learning to code? Don't do this!</title>
+      <link>https://hisam.dev/journals/2024-03-30/learning-to-code-don-t-do-this</link>
+      <description>A simple piece of advice for anyone who's learning to code</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2024-03-30/learning-to-code-don-t-do-this</guid>
+      <pubDate>Sat, 30 Mar 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Don't Miss the Understanding Part</title>
+      <link>https://hisam.dev/journals/2024-03-12/don-t-miss-the-understanding-part</link>
+      <description>A missed perspective on task delegation and the importance of understanding</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2024-03-12/don-t-miss-the-understanding-part</guid>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Dear, Go Developers...</title>
+      <link>https://hisam.dev/journals/2024-02-21/dear-go-developers</link>
+      <description>A love letter from me to all Go developers out there.</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2024-02-21/dear-go-developers</guid>
+      <pubDate>Wed, 21 Feb 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Can You Afford Your Ideal Engineering Culture?</title>
+      <link>https://hisam.dev/journals/2024-02-17/can-you-afford-your-ideal-engineering-culture</link>
+      <description>A point-of-view that is rarely being considered by engineering leaders.</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2024-02-17/can-you-afford-your-ideal-engineering-culture</guid>
+      <pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A Maintainable Codebase Starts with an Opinionated Codebase</title>
+      <link>https://hisam.dev/journals/2024-02-08/a-maintainable-codebase-starts-with-an-opinionated-codebase</link>
+      <description>A personal take on how to build a maintainable codebase</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2024-02-08/a-maintainable-codebase-starts-with-an-opinionated-codebase</guid>
+      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A Weird Tricks that Prompts Me to be More Productive</title>
+      <link>https://hisam.dev/journals/2024-02-02/a-weird-tricks-that-prompts-me-to-be-more-productive</link>
+      <description>Discovering a trick that I've never realised before that helps me when I am un-motivated to work</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2024-02-02/a-weird-tricks-that-prompts-me-to-be-more-productive</guid>
+      <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>On Finding My Writing Styles</title>
+      <link>https://hisam.dev/journals/2024-01-05/on-finding-my-writing-styles</link>
+      <description>My self-reflection as someone who always wanted to become a writer on finding my writing self</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2024-01-05/on-finding-my-writing-styles</guid>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Team Allocation. A Confusing Task</title>
+      <link>https://hisam.dev/journals/2023-09-23/team-allocation-a-confusing-task</link>
+      <description>Unravel practical insights and effective strategies to streamline this pivotal aspect of team management for optimal project outcomes.</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2023-09-23/team-allocation-a-confusing-task</guid>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Case Against Specialists (and Generalists)</title>
+      <link>https://hisam.dev/journals/2023-08-24/the-case-against-specialists-and-generalists</link>
+      <description>Unravelling the intricacies that challenge conventional views on professional roles.</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2023-08-24/the-case-against-specialists-and-generalists</guid>
+      <pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Rule #0 for Product Managers</title>
+      <link>https://hisam.dev/journals/2023-04-24/rule-0-for-product-managers</link>
+      <description>Discover the fundamental principle that transcends the complexities, offering a compass for effective leadership in the dynamic world of product development.</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2023-04-24/rule-0-for-product-managers</guid>
+      <pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Building a Product? Always Strive for the 'Right' Execution</title>
+      <link>https://hisam.dev/journals/2023-03-12/building-a-product-always-strive-for-the-right-execution</link>
+      <description>Unravel key insights and indispensable tips to guide you in achieving the optimal execution for your product, ensuring success in the competitive landscape.</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2023-03-12/building-a-product-always-strive-for-the-right-execution</guid>
+      <pubDate>Sun, 12 Mar 2023 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Personalised Development Environment</title>
+      <link>https://hisam.dev/journals/2023-02-20/personalised-development-environment</link>
+      <description>Demystify the game-changing tools and strategies that empower developers to tailor their coding experience for unprecedented efficiency and innovation.</description>
+      <guid isPermaLink="true">https://hisam.dev/journals/2023-02-20/personalised-development-environment</guid>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

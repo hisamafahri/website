@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        nav {
+            background-color: #004F19;
+            padding: 10px 0;
+            margin-bottom: 40px;
+        }
+        
+        nav .nav-container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .site-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        nav .site-title a {
+            text-decoration: none;
+            color: #FFF;
+        }
+        
+        nav .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav .nav-links a {
+            color: #FFF;
+            text-decoration: none;
+        }
+        
+        #app {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        @media (min-width: 1024px) {
+            nav .nav-container {
+                max-width: 1000px;
+            }
+            
+            #app {
+                max-width: 1000px;
+            }
+            
+            .article-container {
+                grid-template-columns: 650px 250px;
+            }
+            
+            .footnotes-sidebar {
+                display: block;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #666;
+            }
+            
+            .footnote-item {
+                margin-bottom: 20px;
+                position: absolute;
+                width: 250px;
+            }
+            
+            .footnote-item a {
+                color: #00e;
+            }
+        }
+        
+        /* Mobile: show footnotes at bottom */
+        @media (max-width: 1023px) {
+            .footnotes-sidebar {
+                display: block;
+                margin-top: 40px;
+                padding-top: 20px;
+                border-top: 1px solid #ccc;
+                font-size: 14px;
+            }
+            
+            .footnote-item {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="site-title">
+                <a href="/">Hisam's Journal</a>
+            </div>
+            <div class="nav-links">
+                <a href="/about">about</a>
+                <a href="/now">now</a>
+                <a href="/rss.xml">rss</a>
+            </div>
+        </div>
+    </nav>
+    <div id="app">
+        404: Page not found
+    </div>
+</body>
+</html>
