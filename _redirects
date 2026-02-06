@@ -4,5 +4,8 @@
 /now/       /now        301
 /crafts/    /crafts     301
 
-# Journal redirects - handled by build process creating symlinks
-# The build will create the necessary directory structure
+# Journal any-string rewrite: allows /journals/YYYY-MM-DD/any-string to work
+/journals/:date/*  /journals/:date/_fallback.html  200
+
+# 404 page
+/*  /404.html  404
