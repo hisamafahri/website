@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "python3 build.py"
+  command = "pip install -r requirements.txt && python3 build.py"
 
 [[headers]]
   for = "/rss.xml"
@@ -11,3 +11,37 @@
   for = "/sitemap.xml"
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
+
+# Redirect rules for clean URLs
+[[redirects]]
+  from = "/about/"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/uses/"
+  to = "/uses"
+  status = 301
+
+[[redirects]]
+  from = "/now/"
+  to = "/now"
+  status = 301
+
+[[redirects]]
+  from = "/crafts/"
+  to = "/crafts"
+  status = 301
+
+# Journal redirects: /journals/YYYY-MM-DD/ -> /journals/YYYY-MM-DD/title
+[[redirects]]
+  from = "/journals/:date/"
+  to = "/journals/:date"
+  status = 301
+  force = false
+
+# Catch-all for SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
