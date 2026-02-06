@@ -748,14 +748,11 @@ def generate_static_site():
 </div>
 """
 
-        # Create page directory
-        page_dir = BUILD_DIR / page_name
-        page_dir.mkdir(exist_ok=True)
-
         title = meta.get("title", page_name.capitalize())
         description = meta.get("description") or extract_description(content)
 
-        # Write HTML file
+        # Write HTML file directly (not in a directory)
+        # This allows /about to be served as /about.html instead of /about/index.html
         html = HTML_TEMPLATE.format(
             title=f"{title} - {SITE_TITLE}",
             description=description,
@@ -763,7 +760,7 @@ def generate_static_site():
             content=page_content,
         )
 
-        with open(page_dir / "index.html", "w", encoding="utf-8") as f:
+        with open(BUILD_DIR / f"{page_name}.html", "w", encoding="utf-8") as f:
             f.write(html)
 
     # Generate home page (index.html)
@@ -994,6 +991,7 @@ def generate_redirects():
     
     redirects = []
     
+    # Redirect URLs with trailing slash to without trailing slash
     # Add redirects for static pages
     for md_file in content_dir.glob("*.md"):
         page_name = md_file.stem
@@ -1016,6 +1014,7 @@ def generate_redirects():
             title_slug = slugify(meta["title"])
             slug = f"{date_slug}/{title_slug}"
             
+            # Redirect both the directory-style URL and flat-style URL with trailing slash
             redirects.append(f"/journals/{slug}/  /journals/{slug}  301")
     
     # Write _redirects file
@@ -1026,6 +1025,7 @@ def generate_redirects():
     
     print(f"✓ Generated _redirects: {output_file}")
     print(f"  Total redirects: {len(redirects)}")
+
 
 
 if __name__ == "__main__":

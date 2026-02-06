@@ -46,7 +46,7 @@ class StaticHandler(http.server.SimpleHTTPRequestHandler):
         parsed_path = urlparse(self.path)
         path = parsed_path.path
         
-        # Remove trailing slash (except for root path)
+        # Remove trailing slash (except for root path) - redirect to non-trailing
         if path.endswith('/') and path != '/':
             # Redirect to path without trailing slash
             self.send_response(301)
@@ -60,19 +60,46 @@ class StaticHandler(http.server.SimpleHTTPRequestHandler):
         # Let SimpleHTTPRequestHandler handle the rest
         return super().do_GET()
     
-    def send_head(self):
-        """Override send_head to handle directory serving without trailing slash redirects"""
+    def do_HEAD(self):
+        """Handle HEAD requests - same redirect logic as GET"""
         parsed_path = urlparse(self.path)
         path = parsed_path.path
         
-        # If path doesn't end with / but is a directory, serve index.html directly
+        # Remove trailing slash (except for root path) - redirect to non-trailing
+        if path.endswith('/') and path != '/':
+            # Redirect to path without trailing slash
+            self.send_response(301)
+            new_path = path.rstrip('/')
+            # Preserve query string if present
+            new_location = new_path + ('?' + parsed_path.query if parsed_path.query else '')
+            self.send_header('Location', new_location)
+            self.end_headers()
+            return
+        
+        # Let SimpleHTTPRequestHandler handle the rest
+        return super().do_HEAD()
+    
+    def send_head(self):
+        """Override send_head to serve .html files and directories without redirecting"""
+        parsed_path = urlparse(self.path)
+        path = parsed_path.path
+        
+        # First check if a .html file exists for this path (e.g., /about -> /about.html)
+        if not path.endswith(('.html', '/')) and path != '/':
+            html_file = self.translate_path(path + '.html')
+            if os.path.exists(html_file) and os.path.isfile(html_file):
+                # Serve the .html file
+                self.path = path + '.html'
+                return super().send_head()
+        
+        # If path doesn't end with / and is a directory, serve index.html without redirecting
         if not path.endswith('/') and path != '':
             file_path = self.translate_path(path)
             if os.path.isdir(file_path):
                 # Check if index.html exists
                 index = os.path.join(file_path, "index.html")
                 if os.path.exists(index):
-                    # Modify path to include index.html and let parent handle it
+                    # Serve the index.html directly without redirecting
                     self.path = path + '/index.html'
                     return super().send_head()
         
