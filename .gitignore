@@ -27,6 +27,7 @@ Temporary Items
 
 # Build output
 public/
+dist/
 *.pyc
 __pycache__/
 */**/pages.json
