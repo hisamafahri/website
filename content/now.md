@@ -11,13 +11,11 @@ I have been trying my best to have a lot of meaningful things to do every moment
 
 - Product & engineering at [Persol APAC](https://www.persol-group.co.jp/en/)
 
-- Reading a lot of books, articles, and newsletters (mostly from the [Hacker News](https://news.ycombinator.com))
-
-- Writing more here and mostly on [my pen and paper](/uses)
-
-- Grow my [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes) with [Obsidian](https://obsidian.md) 🌱
+- Reading a lot of books, articles, and newsletters
 
 - Opening up a new Business
+
+- Released [tnkb](https://github.com/hisamafahri/tnkb/) last week! Finally
 
 ---
 
