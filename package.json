@@ -1,0 +1,12 @@
+{
+  "name": "test-tufte-pandoc",
+  "version": "1.0.0",
+  "description": "Tufte-style pandoc site",
+  "main": "server.js",
+  "scripts": {
+    "start": "make all && node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
