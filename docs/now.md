@@ -2,7 +2,7 @@
 title: "Now"
 ---
 
-_Last updated: 19 Jan 2026_
+_Last updated: 16 Feb 2026_
 
 
 I have been trying my best to have a lot of meaningful things to do every moment of my life. Here's what I have been up to lately:
@@ -15,7 +15,7 @@ I have been trying my best to have a lot of meaningful things to do every moment
 
 - Opening up a new Business
 
-- Released [tnkb](https://github.com/hisamafahri/tnkb/) last week! Finally
+- Building [Vixy](https://github.com/vixyjs/vixy)
 
 ---
 
