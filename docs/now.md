@@ -2,7 +2,7 @@
 title: "Now"
 ---
 
-_Last updated: 16 Mar 2026_
+_Last updated: 30 Mar 2026_
 
 
 I have been trying my best to have a lot of meaningful things to do every moment of my life. Here's what I have been up to lately:
@@ -15,7 +15,7 @@ I have been trying my best to have a lot of meaningful things to do every moment
 
 - Opening up a new Business
 
-- Building [Vixy](https://github.com/vixyjs/vixy)
+- Building [Vixy](https://github.com/vixyjs/vixy) and [Cakeauth](https://cakeauth.com/)
 
 ---
 
