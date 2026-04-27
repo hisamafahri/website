@@ -2,14 +2,14 @@
 title: "Now"
 ---
 
-_Last updated: 13 Apr 2026_
+_Last updated: 27 Apr 2026_
 
 
 I have been trying my best to have a lot of meaningful things to do every moment of my life. Here's what I have been up to lately:
 
 - Living in BSD City
 
-- Product & engineering at [Persol APAC](https://www.persol-group.co.jp/en/)
+- Lead Product & Engineering at [Persol APAC](https://www.persol-group.co.jp/en/)
 
 - Reading a lot of books, articles, and newsletters
 
