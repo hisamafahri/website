@@ -23,7 +23,7 @@ const HomePage = () => {
             Buybuy
           </a>
           <p className="text-neutral-500 text-sm text-right">
-            My startup (w/ my friend)
+            Startup (w/ my friend)
           </p>
         </div>
         <div className="flex items-center justify-between mt-2">
@@ -46,7 +46,9 @@ const HomePage = () => {
           >
             Bytehaf
           </a>
-          <p className="text-neutral-500 text-sm text-right">My live-streaming alias</p>
+          <p className="text-neutral-500 text-sm text-right">
+            Live-streaming alias
+          </p>
         </div>
         <div className="flex items-center justify-between mt-2">
           <a
@@ -57,8 +59,18 @@ const HomePage = () => {
             Cakeauth
           </a>
           <p className="text-neutral-500 text-sm text-right">
-            Another of my startup (hiatus)
+            Another startup (hiatus)
           </p>
+        </div>
+        <div className="flex items-center justify-between mt-2">
+          <a
+            href="https://www.persolapac.com/"
+            className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
+            target="_blank"
+          >
+            PERSOL
+          </a>
+          <p className="text-neutral-500 text-sm text-right">Regular 9-5 job</p>
         </div>
 
         <h2 className="text-neutral-500 text-sm mt-8">Connect</h2>
@@ -103,6 +115,9 @@ const HomePage = () => {
           </a>
           .
         </p>
+
+        <h2 className="text-neutral-500 text-sm mt-8">Journals</h2>
+        <p className="text-neutral-800 text-sm">Coming soon...</p>
       </section>
     </main>
   );
