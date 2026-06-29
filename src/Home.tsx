@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <main className="bg-neutral-50 h-full min-h-screen pb-18">
+    <main className="bg-neutral-50 h-full min-h-screen pb-18 px-4">
       <section className="w-full max-w-xl mx-auto">
         <div className="py-8">
           <img
