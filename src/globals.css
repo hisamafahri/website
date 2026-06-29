@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist/wght.css";
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Geist Variable", sans-serif;
+}
