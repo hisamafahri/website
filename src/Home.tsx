@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const HomePage = () => {
   return (
-    <main className="bg-neutral-50 h-full min-h-screen pb-18 px-3">
+    <main className="bg-neutral-50 h-full min-h-screen pb-18">
       <section className="w-full max-w-xl mx-auto">
         <div className="py-8">
           <img
@@ -118,201 +120,201 @@ const HomePage = () => {
 
         <h2 className="text-neutral-500 text-sm mt-8">Journals</h2>
         <div className="flex items-center justify-between mt-1">
-          <a
-            href="/journals/2025-07-14"
+          <Link
+            to="/journals/2025-07-14"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Really, How to Find Things to do?
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Jul 2025</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2025-06-05"
+          <Link
+            to="/journals/2025-06-05"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             The Elves Way
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Jun 2025</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2025-02-26"
+          <Link
+            to="/journals/2025-02-26"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             A Stupid Guide on UI Design for Engineers
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Feb 2025</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2025-02-10"
+          <Link
+            to="/journals/2025-02-10"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             AI-less
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Feb 2025</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2024-07-27"
+          <Link
+            to="/journals/2024-07-27"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             It's Hard to Strategize
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Jul 2024</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2024-07-06"
+          <Link
+            to="/journals/2024-07-06"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Start Things from Scratch
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Jul 2024</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2024-06-17"
+          <Link
+            to="/journals/2024-06-17"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Over-documenting
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Jun 2024</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2024-04-28"
+          <Link
+            to="/journals/2024-04-28"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             A Letter to a New Joiner
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Apr 2024</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2024-03-30"
+          <Link
+            to="/journals/2024-03-30"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Learning to code? Don't do this!
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Mar 2024</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2024-03-12"
+          <Link
+            to="/journals/2024-03-12"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Don't Miss the Understanding Part
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Mar 2024</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2024-02-21"
+          <Link
+            to="/journals/2024-02-21"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Dear, Go Developers...
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Feb 2024</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2024-02-17"
+          <Link
+            to="/journals/2024-02-17"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Can You Afford Your Ideal Engineering Culture?
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Feb 2024</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2024-02-08"
+          <Link
+            to="/journals/2024-02-08"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             A Maintainable Codebase Starts with an Opinionated Codebase
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Feb 2024</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2024-02-02"
+          <Link
+            to="/journals/2024-02-02"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             A Weird Tricks that Prompts Me to Be More Productive
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Feb 2024</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2024-01-05"
+          <Link
+            to="/journals/2024-01-05"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             On Finding My Writing Styles
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Jan 2024</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2023-09-23"
+          <Link
+            to="/journals/2023-09-23"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Team Allocation. A Confusing Task
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Sep 2023</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2023-08-24"
+          <Link
+            to="/journals/2023-08-24"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             The Case Against Specialists (and Generalists)
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Aug 2023</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2023-04-24"
+          <Link
+            to="/journals/2023-04-24"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Rule #0 for Product Managers
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Apr 2023</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2023-03-12"
+          <Link
+            to="/journals/2023-03-12"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Building a Product? Always Strive for the 'Right' Execution
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Mar 2023</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2023-02-20"
+          <Link
+            to="/journals/2023-02-20"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Personalised Development Environment
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Feb 2023</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2023-02-03"
+          <Link
+            to="/journals/2023-02-03"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Declared vs Inferred Types, a Debate of the Century
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Feb 2023</p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <a
-            href="/journals/2023-01-29"
+          <Link
+            to="/journals/2023-01-29"
             className="underline decoration-neutral-300 hover:decoration-neutral-800 underline-offset-4 text-sm"
           >
             Hello, world!
-          </a>
+          </Link>
           <p className="text-neutral-500 text-sm text-right">Jan 2023</p>
         </div>
       </section>
