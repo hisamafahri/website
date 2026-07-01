@@ -9,7 +9,9 @@ interface Frontmatter {
   date?: string;
 }
 
-const parseFrontmatter = (content: string): { frontmatter: Frontmatter; body: string } => {
+const parseFrontmatter = (
+  content: string,
+): { frontmatter: Frontmatter; body: string } => {
   const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
   if (!match) {
     return { frontmatter: {}, body: content };
@@ -56,7 +58,11 @@ const markdownComponents = {
       {children}
     </p>
   ),
-  a: ({ children, href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+  a: ({
+    children,
+    href,
+    ...props
+  }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <a
       href={href}
       target={href?.startsWith("http") ? "_blank" : undefined}
@@ -82,7 +88,10 @@ const markdownComponents = {
       {children}
     </li>
   ),
-  blockquote: ({ children, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => (
+  blockquote: ({
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
       className="border-l-2 border-neutral-300 pl-3 italic text-neutral-600 mt-3"
       {...props}
@@ -90,7 +99,11 @@ const markdownComponents = {
       {children}
     </blockquote>
   ),
-  code: ({ children, className, ...props }: React.HTMLAttributes<HTMLElement>) => {
+  code: ({
+    children,
+    className,
+    ...props
+  }: React.HTMLAttributes<HTMLElement>) => {
     const isInline = !className;
     return isInline ? (
       <code
@@ -119,22 +132,34 @@ const markdownComponents = {
   hr: (props: React.HTMLAttributes<HTMLHRElement>) => (
     <hr className="border-neutral-200 my-6" {...props} />
   ),
-  table: ({ children, ...props }: React.TableHTMLAttributes<HTMLTableElement>) => (
+  table: ({
+    children,
+    ...props
+  }: React.TableHTMLAttributes<HTMLTableElement>) => (
     <table className="w-full text-sm text-left mt-2 border-collapse" {...props}>
       {children}
     </table>
   ),
-  thead: ({ children, ...props }: React.HTMLAttributes<HTMLTableSectionElement>) => (
+  thead: ({
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLTableSectionElement>) => (
     <thead className="border-b border-neutral-300" {...props}>
       {children}
     </thead>
   ),
-  th: ({ children, ...props }: React.ThHTMLAttributes<HTMLTableCellElement>) => (
+  th: ({
+    children,
+    ...props
+  }: React.ThHTMLAttributes<HTMLTableCellElement>) => (
     <th className="py-1 pr-3 text-neutral-600 font-medium" {...props}>
       {children}
     </th>
   ),
-  td: ({ children, ...props }: React.TdHTMLAttributes<HTMLTableCellElement>) => (
+  td: ({
+    children,
+    ...props
+  }: React.TdHTMLAttributes<HTMLTableCellElement>) => (
     <td className="py-1 pr-3 text-neutral-800" {...props}>
       {children}
     </td>
